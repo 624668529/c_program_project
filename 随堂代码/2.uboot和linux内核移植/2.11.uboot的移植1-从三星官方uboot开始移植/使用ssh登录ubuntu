@@ -1,0 +1,4 @@
+1、重启网卡上网
+2、安装ssh-server。如果报错提示依赖错误，可以参考：http://www.cnblogs.com/mliudong/p/4094519.html
+
+3、ssh登录不上，要修改/etc/ssh/sshd_config，参考：http://blog.sina.com.cn/s/blog_5f435c130102v6pv.html。		修改完重启时如果/etc/init.d/ssh restart不起作用，可以使用：ps -e | grep ssh，看sshd的进程号，然后kill -9 进程号杀死ssh进程以达到重启的目的，或者直接重启ubuntu系统。

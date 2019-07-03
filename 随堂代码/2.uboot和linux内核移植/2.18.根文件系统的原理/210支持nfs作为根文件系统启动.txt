@@ -1,0 +1,29 @@
+1、配置网络部分，主要是使能CONFIG_IP_PNP以在2中能够看到Root file system on NFS选项
+Networking support 
+	Networking options 
+		TCP/IP networking
+				IP: kernel level autoconfiguration
+					[*] IP: DHCP support
+					[*] IP: BOOTP support
+					
+2、配置开启nfs服务
+File systems  --->	
+	Network File Systems  --->
+		<*> NFS client support 
+		[*] NFS client support for NFS version 3                                  [*] NFS client support for the NFSv3 ACL protocol extension 
+		[*] NFS client support for NFS version 4 (EXPERIMENTAL) 
+		[*] NFS client support for NFSv4.1 (DEVELOPER ONLY) 
+		[*] Root file system on NFS  
+					
+3、在uboot中设置如下启动参数（IP根据实际使用更改）
+setenv bootargs root=/dev/nfs nfsroot=192.168.1.141:/root/porting_x210/rootfs ip=192.168.1.10:192.168.1.141:192.168.1.1:255.255.255.0::eth0:off  init=/linuxrc console=ttySAC2,115200 
+
+
+
+
+
+
+
+
+					
+					

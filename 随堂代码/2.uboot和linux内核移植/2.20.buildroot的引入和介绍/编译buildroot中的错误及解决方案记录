@@ -1,0 +1,128 @@
+编译buildroot的错误解决方案（环境为ubuntu14.04）
+
+(1)配置
+make x210ii_defconfig
+
+
+(2)安装需要的软件包
+sudo apt-get install g++ bison flex texinfo git hgsubversion whois
+
+(3)编译
+make
+
+
+-----------------------------------------------------------------
+以下是我直接编译时遇到的错误及其解决过程，希望对大家有所帮助。
+
+错误1、You may have to install 'g++' on your build machine
+
+
+You must install 'bison' on your build machine
+
+
+make: *** [core-dependencies] Error 1
+
+解决：
+安装g++：			sudo apt-get install g++		
+安装bison：			sudo apt-get install bison
+
+(3)再次make
+错误2、You must install 'flex' on your build machine
+
+解决：
+安装bison：			sudo apt-get install flex
+
+(4)再次make
+错误3、You must install 'makeinfo' on your build machine
+makeinfo is usually part of the texinfo package in your distribution
+
+解决：
+安装makeinfo：		sudo apt-get install makeinfo
+
+提示：Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package makeinfo
+
+解决：看错误3的提示信息中，有提示makeinfo是texinfo的一部分，因此尝试安装texinfo替代：	sudo apt-get install texinfo
+
+(5)再次make
+错误4、You must install 'git' on your build machine
+
+解决：
+安装git：			sudo apt-get install git
+
+(6)再次make
+错误5、You must install 'hg' on your build machine
+
+解决：
+安装git：			sudo apt-get install hg
+
+提示：Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package hg
+
+解决：
+首先使用：apt-cache search hg查找和hg有关的安装包，在查找到的列表中发现有hgsubversion，于是安装这个替代，命令为：sudo apt-get install hgsubversion
+
+(7)再次make
+错误6、You need the 'mkpasswd' utility to set the root password
+
+(in Debian/ubuntu, 'mkpasswd' provided by the whois package)
+
+解决：
+根据提示信息，安装whois：	sudo apt-get install whois
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

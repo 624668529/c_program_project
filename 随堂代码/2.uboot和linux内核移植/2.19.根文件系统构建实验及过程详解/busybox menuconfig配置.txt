@@ -1,0 +1,25 @@
+Busybox Settings--->
+	Build Options--->
+		[*]Build BusyBox as a static binary(no shared libs)
+
+		
+Busybox Library Tuning--->
+	[*]vi-style line editing commands
+	[*]Fancy shell prompts
+	
+	
+Linux Module Utilities--->
+	[ ]Simplified modutils
+	[*]insmod
+	[*]rmmod
+	[*]lsmod
+	[*]modprobe
+	[*]depmod
+
+	
+Linux System Utilities--->[*]mdev
+	[*]Support /etc/mdev.conf
+	[*]Support subdirs/symlinks
+	[*]Support regular expressions substitutions when renaming dev
+	[*]Support command execution at device addition/removal
+	[*]Support loading of firmwares
